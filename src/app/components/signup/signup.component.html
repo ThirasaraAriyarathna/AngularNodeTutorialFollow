@@ -1,0 +1,60 @@
+
+<div class="wrapper">
+  <div class="content-wrapper">
+    <section class="content">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="row show-hide-message" *ngIf="isShow">
+            <div class="alert" [ngClass]="class">{{message}}</div>
+          </div>
+          <!-- Horizontal Form -->
+          <div class="box box-info">
+            <div class="box-header with-border">
+              <h3 class="box-title">Sign Up</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal" (submit)="register($event)" >
+              <div class="box-body">
+                <div class="form-group">
+                  <label for="username" class="col-sm-2 control-label">Username</label>
+                  <label class="col-sm-2 control-label">{{user.username}}</label>
+
+                  <div class="col-sm-10">
+                    <input type="username" class="form-control" id="username" placeholder="Username" required [(ngModel)]="user.username" name="user.username">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="password" class="col-sm-2 control-label">Password</label>
+                  <label class="col-sm-2 control-label">{{user.password}}</label>
+
+                  <div class="col-sm-10">
+                    <input type="password" class="form-control" id="password" placeholder="Password" required [(ngModel)]="user.password" name = "user.password" >
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-sm-offset-2 col-sm-10">
+                    <div class="checkbox">
+                      <label>
+                        <input type="checkbox"> Remember me
+                      </label>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer">
+                <button type="submit" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right">Sign in</button>
+              </div>
+              <!-- /.box-footer -->
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+
+
